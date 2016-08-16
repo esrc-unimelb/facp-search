@@ -1,0 +1,20 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <div ng-switch on="data.main_type">
+        <span  ng-switch-when="Digital Object">
+            <display-dobject ng-model="data"></display-dobject>
+        </span>
+        <span  ng-switch-when="Publication">
+            <display-publication ng-model="data"></display-publication>
+        </span>
+        <span ng-switch-when="Archival Resource">
+            <display-arcresource ng-model="data"></display-arcresource>
+        </span>
+        <span ng-switch-default>
+            <display-entity ng-model="data"></display-entity>
+        </span>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <provenance-view data="data" display-provenance="{{displayProvenance}}"></provenance-view>
+</div>
